@@ -32,6 +32,27 @@ namespace DoodleJump.Classes
                 plates.Add(plate);
             }
         }
+        public static void GenerateHelpPlatform()
+        {
+            int n = 8;
+            if (Physic.score <= 50)
+                n = 8;
+            else if (Physic.score > 50 && Physic.score <= 200)
+                n = 4;
+            else
+                n = 0;
+
+            Random r = new Random();
+
+            for (int i = 0; i < n; i++)
+            {
+                ClearPlatforms();
+                int x = r.Next(0, 250);
+                PointF position = new PointF(x, startPlatePosY -= r.Next(40, 50));
+                Plate plate = new Plate(position);
+                plates.Add(plate);
+            }
+        }
         public static void GenerateRandomPlatform()
         {
             Random rnd = new Random();

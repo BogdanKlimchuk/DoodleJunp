@@ -64,6 +64,7 @@ namespace DoodleJump.Classes
                             if (!platform.isTouchedByPlayer)
                             {
                                 PlateGenerator.GenerateRandomPlatform();
+                                PlateGenerator.GenerateHelpPlatform();
                                 score += 20;
                                 platform.isTouchedByPlayer = true;
                             }
